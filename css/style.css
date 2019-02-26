@@ -371,7 +371,7 @@ footer nav li a:hover {
   width: auto;
   text-align: center;
   color: #ffffff;
-  background-color: white;
+  background-color: black;
   background: url('../images/current_med.jpg') no-repeat;
   background-size: cover;
 
@@ -646,7 +646,7 @@ footer nav li a:hover {
     color: #2a3978;
   }
   .welcome-container h1, .tagline{
-    color: #2a3978;
+    color: #ffffff;
   }
   .gallery{
     display: grid;
@@ -780,6 +780,7 @@ footer nav li a:hover {
   }
   .welcome-container{
     background-color: #ffffff;
+    color: rgba(42, 57, 120, 1.0);
     max-height: 200px;
     min-height: 200px;
   }
