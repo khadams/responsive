@@ -4,6 +4,8 @@ font-family: 'Open Sans', sans-serif;
 font-family: 'PT Serif', serif;
 font-family: 'Shrikhand', cursive; */
 
+/* to fix spacking: align-items & justify-items */
+
 /* from: https://www.bignerdranch.com/blog/web-accessibility-skip-navigation-links/ */
 
 .skip {
@@ -65,11 +67,11 @@ body header img {
     height: 20vh;
   }
 
-body header nav {
+/* body header nav {
   align-items:stretch;
-}
+} */
 
-body header nav ul {
+/* body header nav ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -78,31 +80,82 @@ body header nav ul {
   font-family: 'PT Serif', serif;
   font-size: 16px;
   text-transform: uppercase;
+} */
+
+/* Hamburger Menu*/
+
+.menu-on {
+  background-color: #F1F2F2;
+  color: rgba(42, 57, 120, 1.0);
+  border-radius: 15px;
+  position: fixed;
+  right: 2vh;
+  top: 2vh;
+  /* margin: 2vh; */
+  padding: 10px;
+  z-index: 100;
+}
+
+.menu-off {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  /* background-color: rgba(0,0,0,0.0); */
+  z-index: 95;
+  display: none;
+}
+
+.primary-nav {
+  background-color: #F1F2F2;
+  color: rgba(42, 57, 120, 1.0);
+  position: fixed;
+  right: 2vh;
+  top: 2vh;
+  padding 20vw;
+  min-width: 200px;
+  border-radius: 15px;
+  display: none;
+  z-index: 99;
+}
+
+#toggle-menu:checked ~ .primary-nav {
+  display: block;
+}
+
+#toggle-menu{
+  display: none;
+}
+
+#toggle-menu:checked ~ .menu-off {
+  display: block;
 }
 
 body header nav li {
-  display: inline-block;
-  text-align: right;
-  padding: 0 6px;
+  display: block;
+  text-align: center;
+  width: 65vw;
 }
 
 body header nav ul li a {
+  display: block;
   color: rgba(42, 57, 120, 1.0);
   text-align: center;
   text-decoration: none;
   font-size: 16px;
   font-family: 'Open Sans', sans-serif;
   text-transform: uppercase;
+  padding: 5px 5px;
   overflow: hidden;
   list-style-type: none;
-  padding: 0 .25em;
+  padding: 0.25em .25em;
 }
 
-/* Change the link color to #111 (black) on hover */
+/* Change the link color to red on hover */
 body header nav li a:hover {
   color: rgba(178,14,14,1.0);
 }
-
 
 header nav .current {
   color: rgba(178,14,14,1.0);
@@ -434,7 +487,7 @@ footer nav li a:hover {
   margin: 20px 0;
 }
 
-.fa.fas{
+.fa, .fas{
   color:#2a3978;
 }
 
@@ -576,7 +629,7 @@ footer nav li a:hover {
     max-width: 50vw;
     margin: auto;
   }
-  .faq-section{
+  .faq-section, .main-container-employment{
     display: block;
     width: 60vw;
     margin: 3em;
@@ -655,6 +708,66 @@ footer nav li a:hover {
   .gallery-img-12{
     grid-column: 2 / 3;
     grid-row: 2 / 3;
+  }
+/* header non-hamburger*/
+  .menu-off, .menu-on {
+    display: none;
+  }
+
+  header{
+    display: block;
+  }
+
+  .header-container{
+    display: flex;
+    width: 100%;
+    padding: 2vh;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .header-nav {
+    flex: 2;
+    display: block;
+    /* flex-flow: row wrap; */
+    align-items: flex-end;
+    justify-content: space-between;
+    /* margin: auto; */
+  }
+
+  .primary-nav {
+    position: static;
+    display: flex;
+    order: 3;
+    flex: 2;
+    align-items: space-between;
+    z-index: 5555;
+  }
+
+  body header nav li {
+    display: inline;
+    align-items: flex-end;
+    text-align: right;
+    padding: 0 6px;
+  }
+
+  body header nav ul li a {
+    display:inline-flex;
+    color: rgba(42, 57, 120, 1.0);
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    font-family: 'Open Sans', sans-serif;
+    text-transform: uppercase;
+    padding: 5px 10px;
+    overflow: hidden;
+    list-style-type: none;
+    padding: 0 .25em;
+  }
+
+  /* Change the link color to red on hover */
+  body header nav li a:hover {
+    color: rgba(178,14,14,1.0);
   }
 }
 
